@@ -11,7 +11,7 @@ namespace EasyBlogImageForTypora
             {
                 Console.WriteLine("========================================================================");
                 Console.WriteLine("==                                                                    ==");
-                Console.WriteLine("==                   欢迎使用 EasyBlogImageForTypora                  ==");
+                Console.WriteLine("==                欢迎使用 EasyBlogImageForTypora v1.0                ==");
                 Console.WriteLine("==                                                                    ==");
                 Console.WriteLine("==                    常用的博客MetaWeblog API地址：                  ==");
                 Console.WriteLine("==       博客园： https://rpc.cnblogs.com/metaweblog/你的博客名       ==");
@@ -21,7 +21,7 @@ namespace EasyBlogImageForTypora
                 Console.WriteLine("==             网易（163）：http://os.blog.163.com/word/              ==");
                 Console.WriteLine("==                        其他请自行搜索......                        ==");
                 Console.WriteLine("==                                                                    ==");
-                Console.WriteLine("== * 如有问题或建议，可以搜索微信公众号“小黑在哪里”，即可联系作者。 ==");
+                Console.WriteLine("==  如有问题或建议，可以搜索微信公众号【小黑在哪里】，即可联系作者。  ==");
                 Console.WriteLine("==                                                                    ==");
                 Console.WriteLine("==        https://github.com/xiajingren/EasyBlogImageForTypora        ==");
                 Console.WriteLine("==                                                                    ==");

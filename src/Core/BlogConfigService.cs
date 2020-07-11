@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using EasyBlogImageForTypora.Common;
 using EasyBlogImageForTypora.Entity;
 using Newtonsoft.Json;
 
