@@ -1,12 +1,12 @@
 # EasyBlogImageForTypora
 
-使用Typora写作，图片即时同步到博客网站，无需第三方图床，写完可直接粘贴。
+> 使用Typora写作，图片即时同步到博客网站，无需第三方图床，写完可直接粘贴。
 
 ## 适用范围
 
 本程序基于.net core 3.1开发，支持在win-x64，mac osx-x64系统运行，免安装。linux暂时不考虑，如果有需要再说。
 
-程序的上传服务是使用MetaWebBlog API，MetaWebBlog API(MWA)是一个Blog程序的接口标准，理论上支持MetaWebBlog API标准的博客网站，都可以使用本程序来上传图片，你只需要在程序中配置一下你的博客基本信息即可。目前我自己测试通过有博客园、开源中国（oschina)；CSDN的接口貌似不能用了。
+程序的上传服务是使用MetaWebBlog API，MetaWebBlog API(MWA)是一个Blog程序的接口标准，理论上支持MetaWebBlog API标准的博客网站，都可以使用本程序来上传图片，你只需要在程序中配置一下你的博客基本信息即可。目前我自己测试通过的有博客园、开源中国（oschina)；CSDN的接口貌似不能用了。
 
 ## 如何使用
 
@@ -27,7 +27,7 @@
 
    运行程序，按照界面提示输入配置信息。完成后退出就行，参数只需配置一次，如果以后要修改的话再次运行即可。
 
-   ![](https://img2020.cnblogs.com/blog/610959/202007/610959-20200711114549671-1480666896.png)
+   ![](https://img2020.cnblogs.com/blog/610959/202007/610959-20200711204347215-519142653.png)
 
 3. Typora设置：
 
@@ -57,3 +57,6 @@
 
 ![](https://img2020.cnblogs.com/blog/610959/202007/610959-20200711173830080-1995768272.png)
 
+
+
+博客园：https://www.cnblogs.com/xhznl/p/13285420.html
