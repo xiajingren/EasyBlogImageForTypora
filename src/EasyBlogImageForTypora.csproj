@@ -9,5 +9,4 @@
     <PackageReference Include="MetaWeblogClient.Core" Version="1.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
-
 </Project>

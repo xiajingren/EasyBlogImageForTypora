@@ -22,7 +22,7 @@ namespace EasyBlogImageForTypora.Core
 
             if (blogConfig == null)
             {
-                Console.WriteLine("Please initialize the program configuration first!!!");
+                Utils.Instance.Output("Please initialize the program configuration first!!!");
                 return;
             }
 
@@ -38,15 +38,21 @@ namespace EasyBlogImageForTypora.Core
 
             foreach (var image in images)
             {
+                var fileName = image;
                 try
                 {
-                    var fileInfo = new FileInfo(image);
-                    var mediaObject = client.NewMediaObject(fileInfo.Name, Utils.Instance.GetMimeType(fileInfo), File.ReadAllBytes(image));
-                    Console.WriteLine(mediaObject.URL);
+                    if (Utils.Instance.IsUrl(fileName))
+                    {
+                        fileName = Utils.Instance.DownloadFileAsync(fileName).GetAwaiter().GetResult();
+                    }
+
+                    var fileInfo = new FileInfo(fileName);
+                    var mediaObject = client.NewMediaObject(fileInfo.Name, Utils.Instance.GetMimeType(fileInfo), File.ReadAllBytes(fileName));
+                    Utils.Instance.Output(mediaObject.URL);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    Utils.Instance.Output(e);
                 }
             }
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using EasyBlogImageForTypora.Common;
 using EasyBlogImageForTypora.Entity;
 using Newtonsoft.Json;
 
@@ -9,8 +10,6 @@ namespace EasyBlogImageForTypora.Core
     {
         public static readonly BlogConfigService Instance = new BlogConfigService();
 
-        private static readonly string ConfigFilePath = Path.Combine(AppContext.BaseDirectory, "config.json");
-
         private BlogConfigService() { }
 
         /// <summary>
@@ -19,18 +18,18 @@ namespace EasyBlogImageForTypora.Core
         /// <returns></returns>
         public BlogConfig LoadBlogConfig()
         {
-            if (!File.Exists(ConfigFilePath)) return null;
+            if (!File.Exists(AppConfig.ConfigFilePath)) return null;
 
             try
             {
-                var blogConfig = JsonConvert.DeserializeObject<BlogConfig>(File.ReadAllText(ConfigFilePath));
+                var blogConfig = JsonConvert.DeserializeObject<BlogConfig>(File.ReadAllText(AppConfig.ConfigFilePath));
 
                 return blogConfig;
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                File.Delete(ConfigFilePath);
+                Utils.Instance.Output(e);
+                File.Delete(AppConfig.ConfigFilePath);
                 return null;
             }
         }
@@ -41,30 +40,30 @@ namespace EasyBlogImageForTypora.Core
         /// <returns></returns>
         public BlogConfig InitBlogConfig()
         {
-            File.Create(ConfigFilePath).Close();
+            File.Create(AppConfig.ConfigFilePath).Close();
 
             var blogConfig = new BlogConfig();
 
-            Console.WriteLine("请配置您的博客参数：");
+            Utils.Instance.Output("请配置您的博客参数：");
 
-            Console.WriteLine("您的博客地址（例如 https://www.cnblogs.com/xhznl）：");
+            Utils.Instance.Output("您的博客地址（例如 https://www.cnblogs.com/xhznl）：");
             blogConfig.BlogUrl = Console.ReadLine();
 
-            Console.WriteLine("您的博客ID（例如 xhznl ）：");
+            Utils.Instance.Output("您的博客ID（例如 xhznl ）：");
             blogConfig.BlogId = Console.ReadLine();
 
-            Console.WriteLine("您的博客用户名（例如 xhznl）：");
+            Utils.Instance.Output("您的博客用户名（例如 xhznl）：");
             blogConfig.UserName = Console.ReadLine();
 
-            Console.WriteLine("您的博客密码（例如 ******）：");
+            Utils.Instance.Output("您的博客密码（例如 ******）：");
             blogConfig.Password = Console.ReadLine();
 
-            Console.WriteLine("博客MetaWeblog API地址（例如 https://rpc.cnblogs.com/metaweblog/xhznl）：");
+            Utils.Instance.Output("博客MetaWeblog API地址（例如 https://rpc.cnblogs.com/metaweblog/xhznl）：");
             blogConfig.MetaWeblogUrl = Console.ReadLine();
 
-            File.WriteAllText(ConfigFilePath, blogConfig.SerializeObject());
+            File.WriteAllText(AppConfig.ConfigFilePath, blogConfig.SerializeObject());
 
-            Console.WriteLine("参数配置完成！");
+            Utils.Instance.Output("参数配置完成！");
             return blogConfig;
         }
 
