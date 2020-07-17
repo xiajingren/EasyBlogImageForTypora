@@ -30,10 +30,10 @@
    ![](https://img2020.cnblogs.com/blog/610959/202007/610959-20200711204347215-519142653.png)
 
 3. Typora设置：
+   
+   Typora进入偏好设置-图像，选择插入图片时上传图片。上传服务选择Custom command，自定义命令填写EasyBlogImageForTypora所在路径，我这里是D:\EasyBlogImageForTypora\EasyBlogImageForTypora.exe
 
-   Typora进入偏好设置-图像，上传服务选择Custom command，自定义命令填写EasyBlogImageForTypora所在路径，我这里是D:\EasyBlogImageForTypora\EasyBlogImageForTypora.exe
-
-   ![](https://img2020.cnblogs.com/blog/610959/202007/610959-20200711115414497-1150081517.png)
+   ![](https://img2020.cnblogs.com/blog/610959/202007/610959-20200717164400677-1873636259.png)
 
    配置完成后点击验证图片上传选项：
 
